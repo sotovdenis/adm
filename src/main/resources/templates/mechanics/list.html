@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список механиков</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Список механиков</h1>
+<a href="/mechanics/create">Добавить нового механика</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Квалификация</th>
+        <th>Действия</th>
+    </tr>
+    <tr th:each="mechanic : ${mechanics}">
+        <td th:text="${mechanic.id}"></td>
+        <td th:text="${mechanic.name}"></td>
+        <td th:text="${mechanic.qualificationLevel}"></td>
+        <td>
+            <a th:href="@{/mechanics/edit/{id}(id=${mechanic.id})}">Редактировать</a>
+            <form th:action="@{/mechanics/delete/{id}(id=${mechanic.id})}" method="post" style="display:inline;">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

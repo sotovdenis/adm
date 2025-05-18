@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Информация о машине</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Информация о машине</h1>
+<p>ID: <span th:text="${car.id}"></span></p>
+<p>Модель: <span th:text="${car.model}"></span></p>
+<p>Год выпуска: <span th:text="${car.year}"></span></p>
+<p>Механик: <span th:text="${car.mechanicId}"></span></p>
+<a href="/templates/cars">Назад к списку</a>
+</body>
+</html>

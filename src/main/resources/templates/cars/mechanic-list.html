@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Машины механика</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Машины механика</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Модель</th>
+        <th>Год выпуска</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+    </tr>
+</table>
+<a href="/cars">Назад к списку</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Добро пожаловать!</h1>
+<p>Выберите раздел для работы:</p>
+<ul>
+    <li><a href="/cars">Управление машинами</a></li>
+    <li><a href="/mechanics">Управление механиками</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список машин</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Список машин</h1>
+<a href="/cars/create">Добавить новую машину</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Модель</th>
+        <th>Год выпуска</th>
+        <th>Механик</th>
+        <th>Действия</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+        <td th:text="${car.mechanicId}"></td>
+        <td>
+            <a th:href="@{cars/edit/{id}(id=${car.id})}">Редактировать</a>
+            <form th:action="@{cars/delete/{id}(id=${car.id})}" method="post" style="display:inline;">
+                <button type="submit">Удалить</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Информация о механике</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Информация о механике</h1>
+<p>ID: <span th:text="${mechanic.id}"></span></p>
+<p>Имя: <span th:text="${mechanic.name}"></span></p>
+<p>Квалификация: <span th:text="${mechanic.qualificationLevel}"></span></p>
+<a href="/mechanics">Назад к списку</a>
+</body>
+</html>
