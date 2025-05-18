@@ -32,7 +32,7 @@ public class CarRepository {
     public List<Car> getAllCarWithMechanicId(int mechanicId) {
         List<Car> cars = new ArrayList<>();
 
-        this.cars.forEach((_, v) -> {
+        this.cars.forEach((i, v) -> {
             if (v.getMechanicId() == mechanicId) {
                 cars.add(v);
             }
